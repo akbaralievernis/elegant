@@ -1,12 +1,12 @@
-<!DOCTYPE html>
 <html lang="ru" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Свадебное приглашение Алины и Дмитрия — 20 октября 2023">
+  <meta name="description" content="Свадебное приглашение Алины и Дмитрия — 20 октября 2025">
+  <meta name="keywords" content="свадьба, приглашение, Алина и Дмитрий, Бишкек">
   <title>Алина & Дмитрий | Свадьба</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
   <!-- Fonts: Playfair Display + Cormorant Garamond (элегантность!) -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   
@@ -23,8 +23,8 @@
 
   <!-- Navigation -->
   <nav class="navbar" id="navbar">
-    <a href="#hero" class="logo">Wedding.kg<span></a>
-    <ul class="nav-links" id="nav-links">
+    <a href="#hero" class="logo">Wedding<span>.kg</span></a>
+    <ul class="nav-links" id="nav-links" aria-label="Главное меню">
       <li><a href="#hero">Главная</a></li>
       <li><a href="#our-love">Наша любовь</a></li>
       <li><a href="#events">Мероприятия</a></li>
@@ -34,7 +34,7 @@
       <li><a href="#promises">Обещания</a></li>
       <li><a href="#rsvp">RSVP</a></li>
     </ul>
-    <div class="menu-toggle" id="menu-toggle">
+    <div class="menu-toggle" id="menu-toggle" aria-label="Открыть меню">
       <div class="bar"></div>
       <div class="bar"></div>
       <div class="bar"></div>
@@ -47,7 +47,7 @@
     <div class="hero-overlay"></div>
     <div class="hero-content" data-aos="fade-up">
       <h1>С любовью приглашаем вас</h1>
-      <h2>Гульназ & Таалай</h2>
+      <h2>Алина & Дмитрий</h2>
       <p>отпраздновать нашу свадьбу</p>
       <p class="date-highlight">Пятница, 20 октября 2025</p>
       <div class="countdown" id="countdown">
@@ -79,7 +79,7 @@
     </div>
     <div class="love-content">
       <p data-aos="fade-in" data-aos-delay="200">
-        С любовью и благодарностью приглашаем вас разделить с нами этот особенный день —<br>
+        С любовью и благодарностью приглашаем вас разделить с нами этот особенный день —
         день, когда мы скажем «да» друг другу навеки.
       </p>
     </div>
@@ -128,8 +128,8 @@
       <p class="quote-author" data-aos="fade-up" data-aos-delay="400">— Аноним</p>
     </div>
   </section>
-  <!-- Gallery -->
-  <!-- Gallery (mosaic slideshow) -->
+
+  <!-- Slideshow (Mosaic) -->
   <section class="section">
     <div class="section-title-wrapper" data-aos="fade-up">
       <h2 class="section-title">Моменты нашей любви</h2>
@@ -155,59 +155,6 @@
     </div>
   </section>
 
-  <!-- Slideshow styles (can be moved to main CSS) -->
-  <style>
-    .slideshow {
-      width: 90vw;
-      max-width: 800px;
-      aspect-ratio: 4/3;
-      overflow: hidden;
-      border-radius: 12px;
-      box-shadow: var(--shadow-medium);
-      margin: 2.5rem auto;
-      border: 1px solid rgba(201, 169, 166, 0.2);
-      background: var(--ivory);
-    }
-
-    .grid {
-      display: grid;
-      gap: 4px;
-      width: 100%;
-      height: 100%;
-      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-      grid-auto-rows: 1fr;
-    }
-
-    .tile {
-      width: 100%;
-      height: 100%;
-      border-radius: 6px;
-      background-size: cover;
-      background-position: center;
-      background-color: #f0ece9;
-      opacity: 0;
-      transform: scale(0.85);
-      transition: 
-        opacity 1.1s cubic-bezier(0.2, 0, 0.2, 1),
-        transform 1.1s cubic-bezier(0.2, 0, 0.2, 1);
-      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
-    }
-
-    .tile.show {
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    @media (max-width: 576px) {
-      .grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .slideshow {
-        width: 95vw;
-      }
-    }
-  </style>
-
   <!-- Location -->
   <section id="location" class="section">
     <div class="section-title-wrapper" data-aos="fade-up">
@@ -230,7 +177,8 @@
           height="100%" 
           style="border:0;" 
           allowfullscreen="" 
-          loading="lazy">
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
         </iframe>
       </div>
     </div>
@@ -244,7 +192,7 @@
     <div class="promises-content">
       <p data-aos="fade-in" data-aos-delay="200">
         Я обеспечу благополучие и счастье для тебя и детей, которых мы родим,<br>
-        а ты предложишь мне еду и помощь, когда это потребуется.<br><br>    
+        а ты предложишь мне еду и помощь, когда это потребуется.<br><br>
         Вместе мы защитим наших детей и дом и будем силой и мужеством друг друга.<br>
         Я поставлю всех других людей на второе место после тебя.<br>
         Ты делаешь мою жизнь полной и обещаешь уважать тебя.<br><br>
@@ -298,7 +246,7 @@
   <footer>
     <div class="footer-content">
       <p>С любовью,<br><strong>Алина & Дмитрий</strong></p>
-      <p class="footer-date">Пятница, 20 октября 2023</p>
+      <p class="footer-date">Пятница, 20 октября 2025</p>
       <p>Бишкек, Кыргызстан</p>
     </div>
   </footer>
