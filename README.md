@@ -3,7 +3,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Свадебное приглашение Алины и Дмитрия — 20 октября 2025">
-  <meta name="keywords" content="свадьба, приглашение, Алина и Дмитрий, Бишкек">
+  <meta name="keywords" content="свадьба, приглашение, Гулназ и Таалай, Бишкек">
   <title>Алина & Дмитрий | Свадьба</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="style.css">
@@ -47,7 +47,7 @@
     <div class="hero-overlay"></div>
     <div class="hero-content" data-aos="fade-up">
       <h1>С любовью приглашаем вас</h1>
-      <h2>Алина & Дмитрий</h2>
+      <h2>Гулназ & Таалай</h2>
       <p>отпраздновать нашу свадьбу</p>
       <p class="date-highlight">Пятница, 20 октября 2025</p>
       <div class="countdown" id="countdown">
@@ -245,7 +245,7 @@
   <!-- Footer -->
   <footer>
     <div class="footer-content">
-      <p>С любовью,<br><strong>Алина & Дмитрий</strong></p>
+      <p>С любовью,<br><strong>Гулназ & Кутман/strong></p>
       <p class="footer-date">Пятница, 20 октября 2025</p>
       <p>Бишкек, Кыргызстан</p>
     </div>
