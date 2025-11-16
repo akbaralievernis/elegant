@@ -2,9 +2,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Свадебное приглашение Алины и Дмитрия — 20 октября 2025">
+  <meta name="description" content="Свадебное приглашение Гулназ и Таалай — 20 октября 2025">
   <meta name="keywords" content="свадьба, приглашение, Гулназ и Таалай, Бишкек">
-  <title>Алина & Дмитрий | Свадьба</title>
+  <title>Гулназ & Таалай | Свадьба</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="style.css">
   <!-- Fonts: Playfair Display + Cormorant Garamond (элегантность!) -->
