@@ -2,9 +2,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Свадебное приглашение Гулназ и Таалай — 20 октября 2025">
-  <meta name="keywords" content="свадьба, приглашение, Гулназ и Таалай, Бишкек">
-  <title>Гулназ & Таалай | Свадьба</title>
+  <meta name="description" content="Свадебное приглашение Арзымат и Токтоайым — 15 февраля 2025">
+  <meta name="keywords" content="свадьба, приглашение, Арзымат и Токтоайым, ресторан Мердиана">
+  <title>Арзымат & Токтоайым | Свадьба</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="style.css">
   <!-- Fonts: Playfair Display + Cormorant Garamond (элегантность!) -->
@@ -34,11 +34,11 @@
       <li><a href="#promises">Обещания</a></li>
       <li><a href="#rsvp">RSVP</a></li>
     </ul>
-    <div class="menu-toggle" id="menu-toggle" aria-label="Открыть меню">
+    <button class="menu-toggle" id="menu-toggle" aria-label="Открыть меню" aria-expanded="false" type="button">
       <div class="bar"></div>
       <div class="bar"></div>
       <div class="bar"></div>
-    </div>
+    </button>
   </nav>
 
   <!-- Hero Section -->
@@ -47,9 +47,14 @@
     <div class="hero-overlay"></div>
     <div class="hero-content" data-aos="fade-up">
       <h1>С любовью приглашаем вас</h1>
-      <h2>Гулназ & Таалай</h2>
+      <h2>Арзымат & Токтоайым</h2>
       <p>отпраздновать нашу свадьбу</p>
-      <p class="date-highlight">Пятница, 20 октября 2025</p>
+      <p class="date-highlight">Суббота, 15 февраля 2025</p>
+      <div class="hero-details">
+        <div class="detail-pill"><i class="fa-regular fa-calendar"></i> 15 февраля</div>
+        <div class="detail-pill"><i class="fa-regular fa-clock"></i> 17:00</div>
+        <div class="detail-pill"><i class="fa-solid fa-location-dot"></i> ресторан «Мердиана»</div>
+      </div>
       <div class="countdown" id="countdown">
         <div class="countdown-item">
           <div class="countdown-number" id="days">00</div>
@@ -88,20 +93,14 @@
   <!-- Events -->
   <section id="events" class="section">
     <div class="section-title-wrapper" data-aos="fade-up">
-      <h2 class="section-title">Праздничные мероприятия</h2>
+      <h2 class="section-title">Праздничное мероприятие</h2>
     </div>
     <div class="events-grid">
       <div class="event-card" data-aos="fade-up" data-aos-delay="100">
         <div class="event-number">01</div>
-        <h3 class="event-title">Церемония</h3>
-        <p class="event-date">Пятница, 20 октября 2025</p>
-        <p class="event-location">15:00 — Регистрационный зал, Бишкек</p>
-      </div>
-      <div class="event-card" data-aos="fade-up" data-aos-delay="300">
-        <div class="event-number">02</div>
-        <h3 class="event-title">Прием & Вечеринка</h3>
-        <p class="event-date">Пятница, 20 октября 2025</p>
-        <p class="event-location">17:00 — Банкетный зал «Золотой Век», Бишкек</p>
+        <h3 class="event-title">Сбор гостей</h3>
+        <p class="event-date">Суббота, 15 февраля 2025</p>
+        <p class="event-location">17:00 — ресторан «Мердиана»</p>
       </div>
     </div>
   </section>
@@ -162,24 +161,19 @@
     </div>
     <div class="location-content">
       <div class="location-info" data-aos="fade-right">
-        <h3>Банкетный зал «Золотой Век»</h3>
-        <p><i class="fas fa-map-marker-alt"></i> ул. Чуй, 247, Бишкек, Кыргызстан</p>
+        <h3>Ресторан «Мердиана»</h3>
+        <p><i class="fas fa-map-marker-alt"></i> Адрес будет сообщён дополнительно</p>
         <div class="location-details">
-          <p><i class="fas fa-car"></i> <strong>Парковка:</strong> бесплатная, на территории</p>
-          <p><i class="fas fa-bus"></i> <strong>Общественный транспорт:</strong> автобусы №15, 22, 37 до остановки «Чуй/Ибраимова»</p>
-          <p><i class="fas fa-hotel"></i> <strong>Отели рядом:</strong> «Гранд Бишкек» (5 мин), «Plaza Hotel» (10 мин)</p>
+          <p><i class="fas fa-car"></i> <strong>Парковка:</strong> будет доступна рядом с рестораном</p>
+          <p><i class="fas fa-bus"></i> <strong>Ориентир:</strong> мы заранее поделимся схемой проезда</p>
+          <p><i class="fas fa-hotel"></i> <strong>Дополнительно:</strong> за подробностями обращайтесь к нам</p>
         </div>
       </div>
       <div class="map-container" data-aos="fade-left">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3036.6862347827124!2d74.59100217600437!3d42.87460227115908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x389ec80c8e9c5b1f%3A0xb1a5e7e4f3e2c5d0!2z0JrRgNC40Lkg0JrQvtC90YHRgtCy0L4!5e0!3m2!1sru!2skg!4v1699950000000!5m2!1sru!2skg" 
-          width="100%" 
-          height="100%" 
-          style="border:0;" 
-          allowfullscreen="" 
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+        <div class="map-placeholder">
+          <div class="map-badge">Мердиана</div>
+          <p>Точный адрес уточним ближе к дате.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -191,13 +185,10 @@
     </div>
     <div class="promises-content">
       <p data-aos="fade-in" data-aos-delay="200">
-        Я обеспечу благополучие и счастье для тебя и детей, которых мы родим,<br>
-        а ты предложишь мне еду и помощь, когда это потребуется.<br><br>
-        Вместе мы защитим наших детей и дом и будем силой и мужеством друг друга.<br>
-        Я поставлю всех других людей на второе место после тебя.<br>
-        Ты делаешь мою жизнь полной и обещаешь уважать тебя.<br><br>
-        Благослови тебя Бог, мой лучший друг.<br>
-        Я молюсь, чтобы мое присутствие наполнило нашу жизнь радостью и процветанием.
+        Мы обещаем беречь друг друга, поддерживать в каждом дне и наполнять дом теплом.<br>
+        Быть рядом в радости и в испытаниях, хранить доверие и уважение.<br><br>
+        Пусть наша любовь будет нашей опорой, а доброта и терпение — нашим языком.<br>
+        Спасибо, что разделяете с нами этот важный момент.
       </p>
     </div>
   </section>
@@ -206,7 +197,7 @@
   <section id="rsvp" class="section">
     <div class="section-title-wrapper" data-aos="fade-up">
       <h2 class="section-title">Подтвердите участие</h2>
-      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">Мы будем рады видеть вас! Пожалуйста, сообщите до 1 октября.</p>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">Мы будем рады видеть вас! Пожалуйста, сообщите до 5 февраля.</p>
     </div>
     <form class="rsvp-form" id="rsvp-form">
       <div class="form-group">
@@ -245,9 +236,9 @@
   <!-- Footer -->
   <footer>
     <div class="footer-content">
-      <p>С любовью,<br><strong>Гулназ & Кутман/strong></p>
-      <p class="footer-date">Пятница, 20 октября 2025</p>
-      <p>Бишкек, Кыргызстан</p>
+      <p>С любовью,<br><strong>Арзымат & Токтоайым</strong></p>
+      <p class="footer-date">Суббота, 15 февраля 2025</p>
+      <p>ресторан «Мердиана»</p>
     </div>
   </footer>
 
