@@ -27,15 +27,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const menuToggle = document.getElementById('menu-toggle');
   const navLinks = document.getElementById('nav-links');
   if (menuToggle && navLinks) {
-    menuToggle.addEventListener('click', () => {
+    menuToggle.addEventListener('click', (event) => {
+      event.stopPropagation();
       navLinks.classList.toggle('active');
       menuToggle.querySelectorAll('.bar').forEach(bar => bar.classList.toggle('active'));
+      const isExpanded = navLinks.classList.contains('active');
+      menuToggle.setAttribute('aria-expanded', String(isExpanded));
     });
 
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('active');
         menuToggle.querySelectorAll('.bar').forEach(bar => bar.classList.remove('active'));
+        menuToggle.setAttribute('aria-expanded', 'false');
       });
     });
 
@@ -44,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
         navLinks.classList.remove('active');
         menuToggle.querySelectorAll('.bar').forEach(bar => bar.classList.remove('active'));
+        menuToggle.setAttribute('aria-expanded', 'false');
       }
     });
   }
@@ -58,6 +63,53 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // --- Personalized guest greeting + share link ---
+  (function setupGuestGreeting() {
+    const greetingEl = document.getElementById('guest-greeting');
+    const guestInput = document.getElementById('guest-name');
+    const generateButton = document.getElementById('generate-link');
+    const resultEl = document.getElementById('personal-invite-result');
+    const params = new URLSearchParams(window.location.search);
+    const guest = params.get('guest')?.trim();
+    const safeGuest = guest ? guest.slice(0, 40) : '';
+
+    if (greetingEl) {
+      greetingEl.textContent = safeGuest ? `Уважаемый(ая), ${safeGuest}` : 'Уважаемый гость';
+    }
+
+    function setResult(text, href) {
+      if (!resultEl) return;
+      if (href) {
+        resultEl.innerHTML = `<a href="${href}" target="_blank" rel="noopener">${text}</a>`;
+      } else {
+        resultEl.textContent = text;
+      }
+    }
+
+    if (generateButton && guestInput) {
+      generateButton.addEventListener('click', async () => {
+        const name = guestInput.value.trim().slice(0, 40);
+        if (!name) {
+          setResult('Пожалуйста, введите имя гостя.');
+          return;
+        }
+        const url = new URL(window.location.href);
+        url.searchParams.set('guest', name);
+        const link = url.toString();
+        setResult('Ссылка готова — нажмите, чтобы открыть.', link);
+
+        if (navigator.clipboard?.writeText) {
+          try {
+            await navigator.clipboard.writeText(link);
+            setResult('Ссылка скопирована! Можно отправлять гостю.', link);
+          } catch (error) {
+            console.warn('Clipboard copy failed', error);
+          }
+        }
+      });
+    }
+  })();
+
   // --- Countdown ---
   (function setupCountdown() {
     const daysEl = document.getElementById('days');
@@ -68,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!countdownContainer) return;
 
     function updateCountdown() {
-      const weddingDate = new Date('October 20, 2025 15:00:00').getTime();
+      const weddingDate = new Date('February 15, 2025 17:00:00').getTime();
       const now = Date.now();
       const diff = weddingDate - now;
 
