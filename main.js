@@ -27,15 +27,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const menuToggle = document.getElementById('menu-toggle');
   const navLinks = document.getElementById('nav-links');
   if (menuToggle && navLinks) {
-    menuToggle.addEventListener('click', () => {
+    menuToggle.addEventListener('click', (event) => {
+      event.stopPropagation();
       navLinks.classList.toggle('active');
       menuToggle.querySelectorAll('.bar').forEach(bar => bar.classList.toggle('active'));
+      const isExpanded = navLinks.classList.contains('active');
+      menuToggle.setAttribute('aria-expanded', String(isExpanded));
     });
 
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('active');
         menuToggle.querySelectorAll('.bar').forEach(bar => bar.classList.remove('active'));
+        menuToggle.setAttribute('aria-expanded', 'false');
       });
     });
 
@@ -44,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
         navLinks.classList.remove('active');
         menuToggle.querySelectorAll('.bar').forEach(bar => bar.classList.remove('active'));
+        menuToggle.setAttribute('aria-expanded', 'false');
       }
     });
   }
@@ -68,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!countdownContainer) return;
 
     function updateCountdown() {
-      const weddingDate = new Date('October 20, 2025 15:00:00').getTime();
+      const weddingDate = new Date('February 15, 2025 17:00:00').getTime();
       const now = Date.now();
       const diff = weddingDate - now;
 
