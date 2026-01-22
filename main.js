@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!countdownContainer) return;
 
     function updateCountdown() {
-      const weddingDate = new Date('October 20, 2025 15:00:00').getTime();
+      const weddingDate = new Date('February 15, 2025 17:00:00').getTime();
       const now = Date.now();
       const diff = weddingDate - now;
 
