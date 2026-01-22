@@ -8,7 +8,8 @@
   --gold-foil: #d4af37;
   --gold-foil-light: #e9d6b3;
   --shadow-light: 0 4px 20px rgba(0, 0, 0, 0.04);
-  --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.06);
+  --shadow-medium: 0 10px 40px rgba(31, 27, 26, 0.12);
+  --shadow-soft: 0 16px 60px rgba(31, 27, 26, 0.08);
   --transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -24,6 +25,9 @@ body {
   background-color: var(--ivory);
   overflow-x: hidden;
   line-height: 1.7;
+  background-image:
+    radial-gradient(circle at top left, rgba(201, 169, 166, 0.12), transparent 45%),
+    radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.1), transparent 55%);
 }
 
 /* === Typography === */
@@ -137,6 +141,13 @@ p, li {
   display: none;
   flex-direction: column;
   cursor: pointer;
+  border: 1px solid rgba(201, 169, 166, 0.35);
+  background: rgba(253, 249, 245, 0.9);
+  padding: 0.65rem 0.6rem;
+  border-radius: 12px;
+  gap: 2px;
+  z-index: 1100;
+  box-shadow: var(--shadow-light);
 }
 
 .bar { 
@@ -167,10 +178,10 @@ p, li {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('https://images.unsplash.com/photo-1511795409834-9453a357d3f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center;
+  background: url('счастливый день💌.jpeg') no-repeat center center;
   background-size: cover;
   z-index: -2;
-  filter: brightness(0.95) contrast(1.05);
+  filter: brightness(0.85) contrast(1.05);
 }
 
 .hero-overlay {
@@ -179,7 +190,7 @@ p, li {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(253, 249, 245, 0.75);
+  background: linear-gradient(135deg, rgba(253, 249, 245, 0.92), rgba(253, 249, 245, 0.65));
   z-index: -1;
 }
 
@@ -187,6 +198,11 @@ p, li {
   max-width: 800px;
   z-index: 10;
   padding: 2rem;
+  background: rgba(253, 249, 245, 0.7);
+  border-radius: 18px;
+  border: 1px solid rgba(201, 169, 166, 0.25);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(8px);
 }
 
 .hero h1 {
@@ -218,6 +234,33 @@ p, li {
   color: var(--gold-foil);
   font-size: 1.6rem;
   letter-spacing: 1px;
+}
+
+.hero-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center;
+  margin-top: 1.4rem;
+}
+
+.detail-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  background: rgba(201, 169, 166, 0.18);
+  color: var(--charcoal);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  border: 1px solid rgba(201, 169, 166, 0.3);
+  box-shadow: 0 8px 20px rgba(201, 169, 166, 0.15);
+}
+
+.detail-pill i {
+  color: var(--rose-gold);
 }
 
 /* === Countdown === */
@@ -334,12 +377,25 @@ section {
   left: 0;
   width: 100%;
   height: 4px;
-  background: var(--rose-gold);
+  background: linear-gradient(90deg, var(--rose-gold), var(--gold-foil));
+}
+
+.event-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top, rgba(232, 211, 208, 0.35), transparent 65%);
+  opacity: 0;
+  transition: var(--transition);
 }
 
 .event-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-medium);
+}
+
+.event-card:hover::after {
+  opacity: 1;
 }
 
 .event-number {
@@ -501,6 +557,32 @@ section {
   border: 1px solid rgba(0,0,0,0.05);
 }
 
+.map-placeholder {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(160deg, rgba(248, 244, 240, 0.95), rgba(232, 211, 208, 0.6));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  color: var(--charcoal);
+  gap: 1rem;
+}
+
+.map-badge {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  padding: 0.5rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid rgba(201, 169, 166, 0.4);
+  background: rgba(253, 249, 245, 0.8);
+  color: var(--rose-gold);
+  letter-spacing: 1px;
+  box-shadow: var(--shadow-light);
+}
+
 /* === Promises === */
 .promises-content {
   max-width: 750px;
@@ -636,6 +718,9 @@ footer {
   h1 { font-size: 3.4rem; }
   h2 { font-size: 2rem; }
   .countdown { flex-wrap: wrap; }
+  .hero { height: auto; min-height: 90vh; padding-top: 7rem; }
+  .hero-content { max-width: 680px; }
+  .events-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
@@ -645,12 +730,14 @@ footer {
     right: -100%;
     flex-direction: column;
     background: rgba(253, 249, 245, 0.98);
-    width: 75%;
+    width: 80%;
     height: calc(100vh - 80px);
     padding: 2.5rem;
     transition: 0.4s;
     backdrop-filter: blur(8px);
     border-left: 1px solid rgba(0,0,0,0.05);
+    z-index: 1050;
+    box-shadow: var(--shadow-soft);
   }
   .nav-links.active {
     right: 0;
@@ -668,6 +755,10 @@ footer {
   .section-title { font-size: 2rem; }
   .countdown-item { min-width: 60px; padding: 0.8rem 0.5rem; }
   .countdown-number { font-size: 1.7rem; }
+  .hero-content { padding: 1.6rem; }
+  .detail-pill { font-size: 0.85rem; }
+  .menu-toggle { padding: 0.5rem 0.55rem; }
+  .nav-links { width: 100%; }
   .slideshow {
     width: 95vw;
     aspect-ratio: 1/1; /* Улучшение: квадрат на мобильных для лучшей видимости */
