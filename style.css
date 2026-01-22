@@ -205,6 +205,15 @@ p, li {
   backdrop-filter: blur(8px);
 }
 
+.guest-greeting {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--rose-gold);
+  margin-bottom: 0.8rem;
+}
+
 .hero h1 {
   color: var(--charcoal);
   margin-bottom: 1.4rem;
@@ -675,6 +684,68 @@ section {
   box-shadow: var(--shadow-medium);
 }
 
+.btn.btn-outline {
+  background: transparent;
+  color: var(--rose-gold);
+  border: 1px solid rgba(201, 169, 166, 0.5);
+  box-shadow: none;
+}
+
+.btn.btn-outline:hover {
+  background: rgba(201, 169, 166, 0.15);
+  color: var(--charcoal);
+}
+
+.personal-invite {
+  max-width: 700px;
+  margin: 2.5rem auto 0;
+  padding: 2rem;
+  background: rgba(253, 249, 245, 0.9);
+  border-radius: 16px;
+  border: 1px solid rgba(201, 169, 166, 0.2);
+  box-shadow: var(--shadow-light);
+  text-align: center;
+}
+
+.personal-invite h3 {
+  font-size: 1.6rem;
+  margin-bottom: 0.6rem;
+}
+
+.personal-invite p {
+  margin-bottom: 1.4rem;
+}
+
+.personal-invite-controls {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.personal-invite-controls .form-control {
+  flex: 1 1 220px;
+  min-width: 220px;
+}
+
+.personal-invite-result {
+  margin-top: 1.2rem;
+  font-family: 'Inter', sans-serif;
+  color: var(--charcoal);
+}
+
+.personal-invite-result a {
+  color: var(--rose-gold);
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(201, 169, 166, 0.6);
+}
+
+.personal-invite-result a:hover {
+  color: var(--charcoal);
+  border-bottom-color: var(--charcoal);
+}
+
 /* === Footer === */
 footer {
   background: var(--linen);
@@ -757,6 +828,7 @@ footer {
   .countdown-number { font-size: 1.7rem; }
   .hero-content { padding: 1.6rem; }
   .detail-pill { font-size: 0.85rem; }
+  .guest-greeting { font-size: 0.8rem; }
   .menu-toggle { padding: 0.5rem 0.55rem; }
   .nav-links { width: 100%; }
   .slideshow {

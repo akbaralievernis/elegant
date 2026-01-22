@@ -47,6 +47,7 @@
     <div class="hero-bg"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content" data-aos="fade-up">
+      <p class="guest-greeting" id="guest-greeting">Уважаемый гость</p>
       <h1>С любовью приглашаем вас</h1>
       <h2>Арзымат & Токтоайым</h2>
       <p>отпраздновать нашу свадьбу</p>
@@ -237,6 +238,16 @@
       </div>
       <button type="submit" class="btn">Отправить RSVP</button>
     </form>
+
+    <div class="personal-invite" data-aos="fade-up" data-aos-delay="200">
+      <h3>Персональное приглашение</h3>
+      <p>Введите имя гостя, чтобы отправить персональную ссылку.</p>
+      <div class="personal-invite-controls">
+        <input type="text" id="guest-name" class="form-control" placeholder="Имя гостя">
+        <button type="button" class="btn btn-outline" id="generate-link">Сгенерировать ссылку</button>
+      </div>
+      <div class="personal-invite-result" id="personal-invite-result" aria-live="polite"></div>
+    </div>
   </section>
 
   <!-- Footer -->
